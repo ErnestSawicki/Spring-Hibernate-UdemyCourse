@@ -23,6 +23,8 @@
     <bean id="myCricketCoach"
     	class = "com.springdemo.CricketCoach">
     		<property name="fortuneService" ref="myFortuneService"/>
+    		<property name="emailAddress" value="bestCricketCoachEver@gmail.com"/>
+    		<property name="team" value="Hawkes69"/>
     </bean>
     
     
