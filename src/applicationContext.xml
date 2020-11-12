@@ -6,6 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!--  load the properties file: sport.properties  -->
+    <context:property-placeholder location="classpath:sport.properties"/>
 
     <!-- Define your beans here -->
     <bean id="loggerConfig" class="com.springdemo.LoggerConfig" init-method="initLogger">
@@ -23,8 +26,19 @@
     <bean id="myCricketCoach"
     	class = "com.springdemo.CricketCoach">
     		<property name="fortuneService" ref="myFortuneService"/>
-    		<property name="emailAddress" value="bestCricketCoachEver@gmail.com"/>
-    		<property name="team" value="Hawkes69"/>
+    		<property name="emailAddress" value="${foo.email}"/>
+    		<property name="team" value="${foo.team}"/>
+    </bean>
+    
+    <bean id="randomFortuneService"
+    	class="com.springdemo.RandomFortuneService">
+    </bean>
+    <bean id="mySpringCoach"
+    	class="com.springdemo.SpringCoach">
+    		<property name="fortuneService" ref="randomFortuneService"/>
+    		<property name="dailyWorkout" value="${springCoach.dailyWorkout}"/>
+    		<property name="emailAddress" value="${springCoach.email}"/>
+    		<property name="team" value="${springCoach.team}"/>
     </bean>
     
     
