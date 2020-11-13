@@ -11,12 +11,20 @@ public class SetterDemoApp {
 				
 		//retrieve bean from Spring container
 		CricketCoach theCricketCoach = context.getBean("myCricketCoach", CricketCoach.class);
-		SpringCoach springCoach = context.getBean("mySpringCoach", SpringCoach.class);
+		
+		//with test of BeanScope -> homework
+		SpringCoach springCoachOne = context.getBean("mySpringCoach", SpringCoach.class);
+		SpringCoach springCoachTwo = context.getBean("mySpringCoach", SpringCoach.class);
 		
 		//call methods on the bean
 				
 		System.out.println(theCricketCoach.toString());
-		System.out.println(springCoach.toString());
+		
+		System.out.println();
+		System.out.println("Are springCoaches the same object? " + (springCoachOne==springCoachTwo));
+		System.out.println();
+		System.out.println(springCoachOne.toString());
+		System.out.println(springCoachTwo.toString());
 		
 		//close the context
 		context.close();

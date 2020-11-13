@@ -50,9 +50,10 @@ public class SpringCoach implements Coach {
 	@Override
 	public String toString() {
 		return "DailyWorkout: "+ this.getDailyWorkout() + ", "
-	+  "DailyFortune: " + this.getDailyFortune()+ ", \n"
-	+ "email: " + this.getEmailAddress() + ", "
-	+ "team: " + this.getTeam();
+	+  "DailyFortune: " + this.getDailyFortune()+ "\n"
+	+ "email: " + this.getEmailAddress()
+	+ ", team: " + this.getTeam() 
+	+ ", hashCode" + this.hashCode();
 	}
 
 }

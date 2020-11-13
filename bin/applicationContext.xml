@@ -34,7 +34,8 @@
     	class="com.springdemo.RandomFortuneService">
     </bean>
     <bean id="mySpringCoach"
-    	class="com.springdemo.SpringCoach">
+    	class="com.springdemo.SpringCoach"
+    	scope="prototype">
     		<property name="fortuneService" ref="randomFortuneService"/>
     		<property name="dailyWorkout" value="${springCoach.dailyWorkout}"/>
     		<property name="emailAddress" value="${springCoach.email}"/>
