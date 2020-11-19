@@ -1,0 +1,6 @@
+FirstFortune
+SecondFortune
+ThirdFortune
+ForthFortune
+FithFortune
+Lots of fortunes

@@ -1,10 +1,15 @@
 package com.springdemoAnnotations;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 
@@ -15,6 +20,16 @@ public class TennisCoach implements Coach {
 	@Autowired
 	public TennisCoach(@Qualifier("happyFortuneService") FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
+	}
+	
+	@PostConstruct 
+	public void doSomeStuf() {
+		System.out.println("Here we can do crazy stuff! As an init method");
+	}
+	
+	@PreDestroy
+	public void cleanUpBeforeDestroy() {
+		System.out.println("I am dying!");
 	}
 	
 	
