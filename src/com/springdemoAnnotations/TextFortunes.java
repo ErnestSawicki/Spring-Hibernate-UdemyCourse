@@ -23,7 +23,7 @@ public class TextFortunes implements FortuneService {
 			Scanner myReader = new Scanner(myFortunes);
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
-				System.out.println(">>TextFortunes: readData=" + data);
+				//System.out.println(">>TextFortunes: readData=" + data);
 				fortunes.add(data);
 			}
 			myReader.close();
